@@ -1,0 +1,25 @@
+{
+  "name": "pi-harness-agent",
+  "version": "1.0.0",
+  "description": "pi extension for calling out to other coding harnesses (Gemini CLI, Claude Code, etc.)",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "gemini",
+    "coding-harness",
+    "coding-agent"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/kodicw/pi-harness-agent"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/harness-agent"
+    ],
+    "agents": [
+      "./agents"
+    ]
+  }
+}
