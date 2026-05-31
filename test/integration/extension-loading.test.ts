@@ -110,6 +110,14 @@ describe("Extension source structure", () => {
       extensionSource.includes("stream-json"),
       "Must use stream-json output format",
     );
+    assert.ok(
+      extensionSource.includes("--skip-trust"),
+      "Must include --skip-trust for headless operation",
+    );
+    assert.ok(
+      extensionSource.includes("GEMINI_CLI_TRUST_WORKSPACE"),
+      "Must set GEMINI_CLI_TRUST_WORKSPACE env var",
+    );
   });
 
   test("has pi-subagents agent symlink support", () => {

@@ -47,7 +47,12 @@ function runHarnessWithStreaming(
     const child = spawn(opts.command, opts.args, {
       cwd: opts.cwd,
       stdio: ["ignore", "pipe", "pipe"],
-      env: { ...process.env, FORCE_COLOR: "1", ...opts.env },
+      env: {
+      ...process.env,
+      FORCE_COLOR: "1",
+      GEMINI_CLI_TRUST_WORKSPACE: "true",
+      ...opts.env,
+    },
     });
 
     let stdout = "";
@@ -148,6 +153,7 @@ async function runGeminiAgent(
     params.approvalMode ?? "yolo",
     "--output-format",
     "stream-json",
+    "--skip-trust",
   ];
   if (params.model) {
     args.push("-m", params.model);
